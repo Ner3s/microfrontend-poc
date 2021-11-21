@@ -7,6 +7,10 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const path = require('path');
 const deps = require("./package.json").dependencies;
+
+const remotesModules = require('./config/mfe/remotes');
+const exposesAll = require('./config/mfe/exposes');
+
 module.exports = {
   output: {
     publicPath: "http://localhost:3001/",
@@ -64,8 +68,12 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "dashboard",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
+      remotes: {
+        ...remotesModules
+      },
+      exposes: {
+        ...exposesAll
+      },
       shared: {
         ...deps,
         react: {
