@@ -1,0 +1,23 @@
+{
+  "name": "microfrontend-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "install:all": "concurrently \"wsrun --parallel install\"",
+    "start": "concurrently \"wsrun --parallel start\"",
+    "dev": "concurrently \"wsrun --parallel start:live\""
+  },
+  "author": {
+    "name": "Alan Neres",
+    "email": "alanneres10@hotmail.com"
+  },
+  "workspaces": [
+    "*"
+  ],
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "wsrun": "^5.2.4"
+  }
+}
