@@ -1,9 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const webpack = require('webpack');
 const isDevelopment = process.env.NODE_ENV !== 'production';
+
+// MFE
+const remotes = require('./config/webpack/mfe/remotes');
+const exposes = require('./config/webpack/mfe/exposes');
 
 const path = require('path');
 const deps = require("./package.json").dependencies;
@@ -50,11 +52,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            plugins: [
-              isDevelopment && require.resolve('react-refresh/babel'),
-            ].filter(Boolean)
-          }
         },
       },
     ],
@@ -62,12 +59,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "shell",
+      name: "container",
       filename: "remoteEntry.js",
-      remotes: {
-        dashboard: 'dashboard@http://localhost:3001/remoteEntry.js'
-      },
-      exposes: {},
+      remotes,
+      exposes,
       shared: {
         ...deps,
         react: {
@@ -83,8 +78,5 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
     }),
-
-    isDevelopment && new webpack.HotModuleReplacementPlugin(),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
   ],
 };

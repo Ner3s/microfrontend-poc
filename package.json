@@ -7,14 +7,14 @@
   "scripts": {
     "install:all": "concurrently \"wsrun --parallel install\"",
     "start": "concurrently \"wsrun --parallel start\"",
-    "dev": "concurrently \"wsrun --parallel start:live\""
+    "dev": "concurrently \"wsrun --parallel dev\""
   },
   "author": {
     "name": "Alan Neres",
     "email": "alanneres10@hotmail.com"
   },
   "workspaces": [
-    "*"
+    "./packages/*"
   ],
   "devDependencies": {
     "concurrently": "^6.4.0",
