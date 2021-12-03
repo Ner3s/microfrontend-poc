@@ -10,6 +10,9 @@ const App = () => (
     <React.Suspense fallback={<div><h1>LOADING...</h1></div>}>
       {/* <Header /> */}
     </React.Suspense>
+    <div>
+      <h1>TESTE</h1>
+    </div>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

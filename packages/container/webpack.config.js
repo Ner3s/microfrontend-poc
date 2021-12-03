@@ -1,13 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
-
 // MFE
-const remotes = require('./config/webpack/mfe/remotes');
-const exposes = require('./config/webpack/mfe/exposes');
+const remotes = require("./config/webpack/mfe/remotes");
+const exposes = require("./config/webpack/mfe/exposes");
 
-const path = require('path');
+const path = require("path");
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
@@ -17,11 +15,11 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     alias: {
-      '~': path.resolve(__dirname, './src')
-    }
+      "~": path.resolve(__dirname, "./src"),
+    },
   },
 
-  mode: isDevelopment ? 'development' : 'production',
+  mode: "development",
 
   devServer: {
     port: 3000,
@@ -77,6 +75,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
+      title: "Container",
     }),
   ],
 };
