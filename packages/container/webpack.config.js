@@ -5,11 +5,14 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const remotes = require("./config/webpack/mfe/remotes");
 const exposes = require("./config/webpack/mfe/exposes");
 
+// ENV
+const utils = require('./config/utils');
+
 const path = require("path");
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: `http://localhost:${utils.port}/`,
   },
 
   resolve: {
@@ -19,10 +22,10 @@ module.exports = {
     },
   },
 
-  mode: "development",
+  mode: utils.nodeEnv,
 
   devServer: {
-    port: 3000,
+    port: utils.port,
     historyApiFallback: true,
     client: {
       overlay: {
@@ -57,7 +60,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: utils.appName,
       filename: "remoteEntry.js",
       remotes,
       exposes,
@@ -71,6 +74,10 @@ module.exports = {
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        redux: {
+          singleton: true,
+          requiredVersion: deps.redux
+        }
       },
     }),
     new HtmlWebPackPlugin({

@@ -5,8 +5,8 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
-    "start": "webpack serve --open --mode development",
-    "dev": "webpack serve --open --mode development --live-reload --hot"
+    "start": "env NODE_ENV=development webpack serve --open --mode development",
+    "dev": "env NODE_ENV=development webpack serve --open --mode development --live-reload --hot"
   },
   "license": "MIT",
   "private": true,
