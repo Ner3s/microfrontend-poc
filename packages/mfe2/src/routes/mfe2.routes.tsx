@@ -2,14 +2,16 @@ import React, { lazy } from 'react';
 
 import { RouteObject } from 'react-router-dom';
 
-const Home = lazy(() =>
-  import('~/pages/Home').then(container => ({ default: container.Home })),
+import { ProtectedRoute } from './custom';
+
+const Money = lazy(() =>
+  import('~/pages/Money').then(page => ({ default: page.Money })),
 );
 
 const routes: RouteObject[] = [
   {
-    path: '/mfe2',
-    element: <Home />,
+    path: '/money',
+    element: <ProtectedRoute element={<Money />} />,
   },
 ];
 

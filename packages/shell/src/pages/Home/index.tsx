@@ -1,15 +1,22 @@
 import React, { ReactElement } from 'react';
 
-import { ReactImg } from '~/assets/images';
-
-import packageJson from '../../../package.json';
+import * as S from './styles';
 
 function Home(): ReactElement {
   return (
-    <>
-      <h1>Home Shell {packageJson.version}</h1>
-      <img src={ReactImg} alt="" />
-    </>
+    <S.Container>
+      <S.Header>
+        <h1>Home</h1>
+      </S.Header>
+      <S.Content>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
+          fuga dolores, ratione unde necessitatibus mollitia ab reprehenderit
+          aperiam consectetur sit labore illo, deserunt neque molestiae, et
+          tempore. Perferendis, et beatae.
+        </p>
+      </S.Content>
+    </S.Container>
   );
 }
 

@@ -1,11 +1,21 @@
 import React, { ReactElement, Suspense } from 'react';
 
-import { BrowserRouter, useRoutes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  useRoutes,
+  RouteObject,
+  Navigate,
+} from 'react-router-dom';
 
 import { routes } from './mfe1.routes';
 
 function Routes(): ReactElement {
-  const element = useRoutes(routes);
+  const routesInternal: RouteObject[] = [
+    ...routes,
+    { path: '*', element: <Navigate to="/cards" replace /> },
+  ];
+
+  const element = useRoutes(routesInternal);
 
   return element;
 }

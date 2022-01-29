@@ -20,11 +20,14 @@
 const exposes = {
   development: {
     './Routes': '~/routes/mfe1.routes',
+    './NavLink': '~/routes/navigation.routes',
   },
   staging: {
     './Routes': '~/routes/mfe1.routes',
+    './NavLink': '~/routes/navigation.routes',
   },
   production: {
+    './NavLink': '~/routes/navigation.routes',
     './Routes': '~/routes/mfe1.routes',
   },
 };

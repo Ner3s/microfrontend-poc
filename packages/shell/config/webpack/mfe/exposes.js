@@ -17,6 +17,4 @@
  * If you share any component between applications, your hot reload will stop working.
  */
 
-module.exports = {
-
-}
+module.exports = {};

@@ -1,6 +1,8 @@
 const CompressionPlugin = require('compression-webpack-plugin');
+const dotenv = require('dotenv');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 // Module - MFE
@@ -8,6 +10,10 @@ const deps = require('../../package.json').dependencies;
 const utils = require('../utils');
 const exposes = require('./mfe/exposes');
 const remotes = require('./mfe/remotes');
+
+const env = dotenv.config({ path: utils.envTarget }).parsed;
+
+console.log(env);
 
 const plugins = [
   new ModuleFederationPlugin({
@@ -42,6 +48,10 @@ const plugins = [
       removeAttributeQuotes: true,
     },
   }),
+
+  new webpack.DefinePlugin({
+    'process.env': JSON.stringify(env),
+  }),
 ];
 
 const envMode = {
@@ -56,7 +66,7 @@ const envMode = {
       new CompressionPlugin({
         deleteOriginalAssets: true,
         algorithm: 'gzip',
-        exclude: /\.(html)$/,
+        test: /\.js$/,
       }),
     );
   },

@@ -8,16 +8,18 @@ import GlobalStyles from '~/styles/global';
 
 import theme from './styles/theme';
 
+import { HookProvider } from './hooks';
 import Routes from './routes';
 import store from './store';
-// const Header = React.lazy(() => import('dashboard/Header').then(module => ({ default: module.Header })));
 
 function App(): ReactElement {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Routes />
-        <GlobalStyles />
+        <HookProvider>
+          <Routes />
+          <GlobalStyles />
+        </HookProvider>
       </ThemeProvider>
     </Provider>
   );

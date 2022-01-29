@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    color: ${({ theme }) => theme.colors.light};
     background-color: ${({ theme }) => theme.colors.background};
     @media (min-width: 1981px) {
       font-size: 80%;

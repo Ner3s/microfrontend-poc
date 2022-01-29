@@ -9,10 +9,14 @@ import theme from './styles/theme';
 
 import Routes from './routes';
 
-const App = (): ReactElement => (
-  <ThemeProvider theme={theme}>
-    <Routes />
-    <GlobalStyles />
-  </ThemeProvider>
-);
+const App = (): ReactElement => {
+  console.log(process.env.NODE_ENV);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Routes />
+      <GlobalStyles />
+    </ThemeProvider>
+  );
+};
 ReactDOM.render(<App />, document.getElementById('app'));

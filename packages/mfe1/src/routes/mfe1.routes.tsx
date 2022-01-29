@@ -1,15 +1,17 @@
 import React, { lazy } from 'react';
 
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, Navigate } from 'react-router-dom';
 
-const Home = lazy(() =>
-  import('~/pages/Home').then(container => ({ default: container.Home })),
+import { ProtectedRoute } from './custom';
+
+const Cards = lazy(() =>
+  import('~/pages/Cards').then(container => ({ default: container.Cards })),
 );
 
 const routes: RouteObject[] = [
   {
-    path: '/mfe1',
-    element: <Home />,
+    path: '/cards',
+    element: <ProtectedRoute element={<Cards />} />,
   },
 ];
 

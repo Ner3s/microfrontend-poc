@@ -15,7 +15,7 @@ module.exports = {
     },
   },
 
-  mode: utils.nodeEnv,
+  mode: utils.webpackMode,
 
   devServer: {
     port: utils.port,

@@ -1,19 +1,38 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-console */
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, Navigate } from 'react-router-dom';
 
+import { ProtectedRoute } from './custom';
 import { externalRoutes } from './modules.routes';
 
+const Dashboard = lazy(() =>
+  import('~/pages/Dashboard').then(container => ({
+    default: container.Dashboard,
+  })),
+);
+
 const Home = lazy(() =>
-  import('~/pages/Home').then(container => ({ default: container.Home })),
+  import('~/pages/Home').then(container => ({
+    default: container.Home,
+  })),
 );
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />,
+    element: <ProtectedRoute element={<Dashboard />} />,
+    children: [
+      {
+        path: '/',
+        element: <ProtectedRoute element={<Home />} />,
+      },
+    ],
+  },
+  {
+    path: '*',
+    element: <Navigate to="/" replace />,
   },
 ];
 
@@ -23,7 +42,7 @@ Object.entries(externalRoutes).map(([key, module]) => {
       routes: RouteObject[];
     };
 
-    routes.push(...importedRoutes);
+    routes[0].children.push(...importedRoutes);
   } catch (error) {
     console.warn(`Não foi possível importar as rotas do módulo: ${key}`);
   }
