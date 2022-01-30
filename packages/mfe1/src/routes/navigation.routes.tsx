@@ -1,5 +1,5 @@
-import { MdBarChart } from 'react-icons/md';
+import { BiIdCard } from 'react-icons/bi';
 
-const navLink = { icon: MdBarChart, path: '/cards' };
+const navLink = { icon: BiIdCard, path: '/cards' };
 
 export { navLink };

@@ -5,3 +5,5 @@
  *
  * declare module 'shell/Button';
  */
+
+declare module 'shell/components/Header'

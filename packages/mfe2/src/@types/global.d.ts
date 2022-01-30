@@ -5,3 +5,5 @@
  *
  * declare module 'shell/Button';
  */
+
+declare module 'shell/store/textMessageSlice';

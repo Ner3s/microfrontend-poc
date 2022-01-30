@@ -8,10 +8,17 @@ import GlobalStyles from '~/styles/global';
 import theme from './styles/theme';
 
 import Routes from './routes';
+import { Provider } from 'react-redux';
+import store from '~/store';
+import ErrorBoundary from './components/errorBondaries';
 
 const App = (): ReactElement => (
   <ThemeProvider theme={theme}>
-    <Routes />
+    <Provider store={store}>
+      <ErrorBoundary>
+        <Routes />
+      </ErrorBoundary>
+    </Provider>
     <GlobalStyles />
   </ThemeProvider>
 );
