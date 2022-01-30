@@ -40,14 +40,16 @@ function Home(): ReactElement {
         </p>
 
         <h3>Text Message</h3>
-        <form
+        <S.Form
           onSubmit={e => {
             onSubmit(e);
           }}
         >
-          <textarea onChange={e => setText(e.currentTarget.value)}></textarea>
-          <button>Send</button>
-        </form>
+          <S.TextArea
+            onChange={e => setText(e.currentTarget.value)}
+          ></S.TextArea>
+          <S.Button type="submit">Send</S.Button>
+        </S.Form>
 
         <p style={{ margin: '1.5rem 0' }}>Text message send:{textSend.text}</p>
       </S.Content>

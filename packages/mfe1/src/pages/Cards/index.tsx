@@ -1,6 +1,16 @@
-import React, { ReactElement } from 'react';
+import React, { lazy, ReactElement, Suspense } from 'react';
+
+import { MockComponent } from '~/components/MockComponent';
 
 import * as S from './styles';
+
+const Header = lazy(() =>
+  import('shell/components/Header')
+    .then(shell => ({ default: shell.Header }))
+    .catch(() => ({
+      default: () => <MockComponent textDisplay="Header MOCK" />,
+    })),
+);
 
 function Cards(): ReactElement {
   const labels = ['red', 'orange', 'yellow', 'green', 'blue'];
@@ -20,6 +30,11 @@ function Cards(): ReactElement {
           </S.Card>
         ))}
       </S.WrapperCards>
+
+      <p style={{ margin: '2rem 0' }}>Import other module</p>
+      <Suspense fallback="...Loading">
+        <Header />
+      </Suspense>
     </S.Container>
   );
 }

@@ -19,4 +19,5 @@
 
 module.exports = {
   './store/textMessageSlice': '~/store/textMessageSlice',
+  './components/Header': '~/components/Header',
 };

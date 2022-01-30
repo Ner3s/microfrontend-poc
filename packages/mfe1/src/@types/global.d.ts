@@ -6,4 +6,4 @@
  * declare module 'shell/Button';
  */
 
-declare module 'shell/components/Header'
+declare module 'shell/components/Header';
