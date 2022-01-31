@@ -28,9 +28,9 @@ function AuthProvider({ children }: { children: ReactNode }): ReactElement {
     return {} as IAuth;
   });
 
-  const signIn = ({ email }: ICredential) => {
+  const signIn = ({ username }: ICredential) => {
     const data: IAuth = {
-      email,
+      username,
       name: 'user',
       isAuthenticated: true,
       role: 'admin',
@@ -42,7 +42,7 @@ function AuthProvider({ children }: { children: ReactNode }): ReactElement {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated: !!user.email, user, signIn }}
+      value={{ isAuthenticated: !!user.username, user, signIn }}
     >
       {children}
     </AuthContext.Provider>

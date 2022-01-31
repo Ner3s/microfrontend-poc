@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #3c3834;
 `;
 
 export const Form = styled.form`
@@ -16,7 +15,7 @@ export const Form = styled.form`
   max-width: 450px;
   width: 100%;
   padding: 2rem;
-  background-color: #28221f;
+  background-color: #242537;
   border-radius: 0.8rem;
   box-shadow: 0 0 5px #00000065;
 `;
@@ -30,7 +29,7 @@ export const Input = styled.input`
   transition: all 200ms ease-in-out;
 
   &:not(:placeholder-shown) {
-    border: 2px solid blueviolet;
+    border: 2px solid #393a4b;
   }
 
   &:placeholder-shown {
@@ -41,7 +40,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   margin: 1rem 0;
   height: 4.5rem;
-  background-color: blueviolet;
+  background-color: #393a4b;
   color: #fff;
   border-radius: 0.8rem;
 
@@ -53,5 +52,5 @@ export const Button = styled.button`
 export const Title = styled.h1`
   color: #fff;
   margin: 1.5rem 0;
-  text-shadow: 2px 3px 1px blueviolet;
+  text-shadow: 2px 3px 1px #393a4b;
 `;

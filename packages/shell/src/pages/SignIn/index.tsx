@@ -7,18 +7,18 @@ import * as S from './styles';
 function SignIn(): ReactElement {
   const { signIn } = useAuth();
 
-  const [email, setEmail] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleSignIn = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!email || !password) {
+    if (!username || !password) {
       alert('Preencha os campos!');
       return 0;
     }
 
-    signIn({ email, password });
+    signIn({ username, password });
   };
 
   return (
@@ -27,10 +27,10 @@ function SignIn(): ReactElement {
       <S.Form onSubmit={handleSignIn}>
         <S.Input
           type="text"
-          name="email"
-          placeholder="E-mail"
+          name="username"
+          placeholder="Username"
           onChange={e => {
-            setEmail(e.currentTarget.value);
+            setUsername(e.currentTarget.value);
           }}
           required
         />

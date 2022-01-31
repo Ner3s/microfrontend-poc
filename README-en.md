@@ -95,7 +95,12 @@ Most used is Error Boundaries.
 ---
 
 ## Preview
+![Preview](.github/shell-signin.png)
+**<p align="center">Signin page - Shell.</p>**
+
 ![Preview](.github/preview.gif)
+**<p align="center">Project running.</p>**
+
 
 ---
 

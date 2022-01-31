@@ -4,7 +4,7 @@
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-ferramentas">Ferramentas</a> •
- <a href="#-configuracoes">Configurações</a> • 
+ <a href="#-configurações">Configurações</a> • 
  <a href="#-como-executar-o-projeto">Como executar</a> • 
  <a href="#-recomendações-e-explicações">Recomendações e Explicações</a> • 
 <a href="#user-content--licença">Licença</a>
@@ -92,7 +92,11 @@ O mais utilizado é o Error Boundaries.
 ---
 
 ## 👀 Visualização
+![Preview](.github/shell-signin.png)
+**<p align="center">Página de Login - Shell.</p>**
+
 ![Preview](.github/preview.gif)
+**<p align="center">Projeto em execução.</p>**
 
 ---
 
@@ -110,6 +114,4 @@ Feito com ❤️ por Alan Neres 👋🏽 [Entre em contato!](https://www.linkedi
 
 ## 👨‍💻 Ainda em desenvolvimento (TODO)
 
-- [x] Redux to mfe2
-- [] Solved webpack.config's
-- [x] Add React Erro Bondaries
+- [ ] Solved webpack.config's

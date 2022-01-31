@@ -2,12 +2,12 @@ export type TRole = 'admin' | 'worker' | 'manager';
 
 export interface IAuth {
   name: string;
-  email: string;
+  username: string;
   role: TRole;
   isAuthenticated: boolean;
 }
 
 export interface ICredential {
-  email: string;
+  username: string;
   password?: string;
 }
