@@ -6,8 +6,10 @@
  <a href="#-ferramentas">Ferramentas</a> •
  <a href="#-configurações">Configurações</a> • 
  <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-recomendações-e-explicações">Recomendações e Explicações</a> • 
-<a href="#user-content--licença">Licença</a>
+ <a href="#-recomendações-e-explicações">Recomendações e Explicações</a> •
+ <a href="#-visualização">Visualização</a> •
+ <a href="#user-content--licença">Licença</a> •
+ <a href="#-linguagens">Linguagens</a> 
 </p>
 
 ---
@@ -46,7 +48,7 @@ Shell / Host / Container / Consumer.
 
 Esses são os nomes mais comuns que você irá encontrar, todos eles tem o mesmo objetivo, que é para englobar os outros projetos.
 
-**Mfe1** - Compartilho uma página com alguns cards.
+**Mfe1** - Compartilho uma página com alguns cards, nele importo um componente da shell e caso a shell não esteja executando, um mock entra no lugar do componente.
 
 **Mfe2** - Se dá pela utilização de um estado do redux disparado diretamente da Shell, conseguindo compartilhar o estado da aplicação, poderia ser feito também com **ContextApi**, adicionando a instância da shell no proprio remote e alterar o caminho absoluto para o do module-federation.
 
@@ -70,6 +72,7 @@ Não se preocupe, pois o workspaces irá fazer todo o trabalho de instalar as de
 
 - E para rodar o projeto:
 > `yarn dev `
+
 Quando executado, irá abrir 3 instâncias de Webpack DevServer, uma para cada projeto.
 
 ---

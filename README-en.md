@@ -8,7 +8,9 @@
  <a href="#-how-to-run">How to run</a> • 
  <a href="#-recommendations-and-explanations">
 Recommendations and Explanations</a> • 
-<a href="#user-content--license">License</a>
+ <a href="#-preview">Preview</a> •
+ <a href="#user-content--license">License</a> •
+ <a href="#-language">Language</a> 
 </p>
 
 ---
@@ -47,7 +49,7 @@ Shell / Host / Container / Consumer.
 
 These are the most common names you will find, they all have the same purpose, which is to encompass the other projects.
 
-**Mfe1** - Share a page with some cards.
+**Mfe1** - Share a page with some cards, in it i import a shell component and if the shell is not running, a mock enters the component place.
 
 **Mfe2** - If you use a redux state triggered directly from the Shell, managing to share the application state, it could also be done with **ContextApi**, adding the shell instance to the remote itself and changing the absolute path to the module- federation.
 
