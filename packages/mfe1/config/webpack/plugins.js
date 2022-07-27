@@ -13,8 +13,6 @@ const remotes = require('./mfe/remotes');
 
 const env = dotenv.config({ path: utils.envTarget }).parsed;
 
-console.log(env);
-
 const plugins = [
   new ModuleFederationPlugin({
     name: utils.appName,

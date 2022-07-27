@@ -7,6 +7,7 @@
   "scripts": {
     "start": "concurrently \"wsrun --parallel start\"",
     "build": "concurrently \"wsrun --parallel build\"",
+    "build:dev": "concurrently \"wsrun --parallel build:dev\"",
     "build:start": "concurrently \"wsrun --parallel build:start\"",
     "dev": "concurrently \"wsrun --parallel dev\"",
     "lint": "concurrently \"wsrun --parallel lint\""
